@@ -465,7 +465,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  rotSpeed: 3
+  rotSpeed: 1
+  cam: {fileID: 1679540706}
 --- !u!1 &558854803
 GameObject:
   m_ObjectHideFlags: 0
