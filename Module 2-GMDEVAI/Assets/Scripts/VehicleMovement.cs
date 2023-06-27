@@ -36,8 +36,6 @@ public class VehicleMovement : MonoBehaviour
 
         this.transform.rotation = Quaternion.Slerp(this.transform.rotation, Quaternion.LookRotation(direction), Time.deltaTime * rotSpeed);
 
-
-
         if (Vector3.Angle(goal.forward, this.transform.forward) > breakAngle && speed > 2)
         {
             speed = Mathf.Clamp(speed - (decceleration * Time.deltaTime), minSpeed, maxSpeed);
@@ -50,16 +48,10 @@ public class VehicleMovement : MonoBehaviour
         if (deltaY < 0 && speed > 10)
         {
             speed = Mathf.Clamp(speed + (decceleration * deltaY * Time.deltaTime), minSpeed, maxSpeed);
-            Debug.Log("Deccelerating " + (decceleration * deltaY * Time.deltaTime));
         }
         else if (deltaY > 0 && speed > 10)
         {
             speed = Mathf.Clamp(speed + (acceleation * deltaY * Time.deltaTime), minSpeed, maxSpeed);
-            Debug.Log("Accelerating " + (acceleation * deltaY * Time.deltaTime));
-        }
-        else
-        {
-            speed = Mathf.Clamp(speed + (acceleation * Time.deltaTime), minSpeed, maxSpeed);
         }
 
         this.transform.Translate(0, 0, Time.deltaTime * speed);
