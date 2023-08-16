@@ -101,7 +101,6 @@ public class FollowPath : MonoBehaviour
             return;
         }
 
-        waypointNumber -= 1;
         moveToLocation = true;
 
         graph.AStar(currentNode, wps[waypointNumber]);
